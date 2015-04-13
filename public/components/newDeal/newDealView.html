@@ -1,0 +1,46 @@
+<main-header></main-header>
+<div id="new-deal-page" ng-controller="NewDealController">
+	<div class="grid mt-10">
+		<div class="col-1-2 push-1-4">
+			<div class="medium-light" align="center">
+				Create a New Deal
+			</div>
+			<form name="newDealForm" ng-submit="submitNewDeal(newDealForm)">
+				
+				<input type="text" name="cost" placeholder="Cost" class="big-input mt-10" ng-model="deal.cost" required />
+				<div class="invalid-text" ng-show="newDealForm.cost.$invalid && newDealForm.cost.$dirty">
+			        <div ng-show="newDealForm.cost.$error.required">
+			            A cost is required
+			        </div>
+			    </div>
+
+			    <select name="rank" ng-model="deal.rank" class="big-input mt-10" style="height:40px;" required>
+			    	<option value="Rank" disabled selected>Rank</option>
+			    	<option value="1">1</option>
+			    	<option>2</option>
+			    	<option>3</option>
+			    </select>
+
+			    <select name="school" ng-model="deal.school" class="big-input mt-10" style="height:40px;" required>
+			    	<option value="School" disabled selected>School</option>
+			    	<option value="UCSB">UCSB</option>
+			    	<option>Tulane University</option>
+			    	<option>Wesleyan University</option>
+			    </select>
+
+			    <textarea name="description" placeholder="Deal Description" rows="5" class="no-resize big-input mt-10" ng-model="deal.description" required></textarea>
+				<div class="invalid-text" ng-show="newDealForm.description.$invalid && newDealForm.description.$dirty">
+			        <div ng-show="newDealForm.description.$error.required">
+			            A description is required
+			        </div>
+			    </div>
+			    <div class="mt-10">
+			     Upload an image: <input type="file" name="imageInput" fileread="deal.image" placeholder="Add an image" />
+			 	</div>
+
+			    <input type="submit" class="big-btn blue mt-10" value="Create Deal" />
+
+			</form>
+		</div>
+	</div>
+</div>

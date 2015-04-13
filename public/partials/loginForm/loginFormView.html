@@ -1,0 +1,11 @@
+<script>
+	Parse.User.logOut();
+</script>
+<div class="login-form">
+	<form name="loginForm" ng-submit="submitLoginForm(loginForm)">
+		<input type="text" name="email" placeholder="Email" class="big-input mb-10 mt-10" ng-model="user.email" required />
+		<input type="password" name="password" placeholder="Password" class="big-input mb-10" ng-model="user.password" required />
+		<input type="submit" class="big-btn blue" value="Log In" />
+
+	</form>
+</div>

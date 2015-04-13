@@ -1,0 +1,37 @@
+<main-header></main-header>
+<div id="deals-page" ng-controller="DealsController">
+	
+	<div class="grid mt-10">
+		<div class="col-5-12 mobile-col-1-1">
+			<span class="medium-light">
+				Deals
+			</span>
+			<span class="push-right mt-5">
+				<a class="link-btn" href="/#/newdeal">Create a New Deal</a>
+			</span><br/>
+			{{message}}
+			<table class="table business-info-table" ng-repeat="deal in deals">
+				<tr>
+					<td>
+						<span class="regular-bold">Rank:</span> {{deal.rank}} <span class="regular-bold">Cost:</span> {{deal.cost}} <span class="regular-bold">School:</span> {{deal.school}}
+						<div>
+							{{deal.description}}
+						</div>
+						<img class="deal-image" src="{{deal.url}}" />
+					</td>
+					<td>
+						<div class="pull-right" style=""><button class="delete-btn" ng-click="delete(deal.id)">Delete</button>
+						</div> 
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-5-12 hide-on-mobile">
+			<div class="push-right">
+			<img src="assets/img/iphone-deal.png" height="500" width="auto" />
+		</div>
+		</div>
+	</div>
+	
+</div>

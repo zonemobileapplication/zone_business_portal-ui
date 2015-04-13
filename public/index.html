@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app='zonePortalApp'>
+<head>
+	<meta charset="utf-8">
+	<title>Zone</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/grid.css" />
+	<link rel="stylesheet" type="text/css" href="assets/lib/ui-bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet/less" type="text/css" href="assets/css/main.less" />
+	
+	<!-- JS LIBRARIES -->
+	<script src="assets/lib/jquery/jquery.min.js"></script>
+	<script src="assets/lib/angular/angular.min.js"></script>
+	<script src="assets/lib/angular/angular-route.min.js"></script>
+	<script src="assets/lib/angular/parse-angular.js"></script>
+	<script src="assets/lib/moment/moment.js"></script>
+	<script src="assets/lib/less/less.js"></script>
+	<script src="assets/lib/ui-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="assets/lib/parse/parse.min.js"></script>
+
+	<!--CONTROLLERS -->
+	<script src="components/login/loginController.js"></script>
+	<script src="components/businessInfo/businessInfoController.js"></script>
+	<script src="components/logout/logoutController.js"></script>
+	<script src="components/deals/dealsController.js"></script>
+	<script src="components/newDeal/newDealController.js"></script>
+
+	<!--SERVICES-->
+
+
+	<!--DIRECTIVES-->
+	<script src="partials/header/headerDirective.js"></script>
+	<script src="partials/loginForm/loginFormDirective.js"></script>
+	<script src="partials/registerForm/registerFormDirective.js"></script>
+	<script src="partials/updateInfo/updateInfoDirective.js"></script>
+	<script src="partials/fileRead/fileReadDirective.js"></script>
+
+
+	<script src="app.js"></script>
+</head>
+<body>
+	<div ng-view></div>
+</body>
+</html>

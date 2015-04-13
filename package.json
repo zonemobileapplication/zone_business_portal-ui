@@ -1,0 +1,14 @@
+{
+  "name": "zone-ui",
+  "version": "1.0.0",
+  "description": "UI For Zone Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.10.0"
+  },
+  "author": "John Kelley",
+  "license": "ISC"
+}

@@ -1,0 +1,84 @@
+<main-header></main-header>
+<div id="business-info-page" ng-controller="BusinessInfoController">
+	<div id="business-info-display">
+		<div class="grid mt-10">
+			<div class="col-5-12 mobile-col-1-1">
+				<span class="medium-light">
+					Business Information
+				</span>
+				<span class="push-right mt-5">
+					<button class="link-btn" ng-click="showUpdatePage()">Edit</button>
+				</span>
+				<table class="table business-info-table">
+					<tr>
+						<td class="regular-bold">
+						Business Name:
+						</td>
+						<td>
+						{{user.business}}
+						</td>
+					</tr>
+
+					<tr>
+						<td class="regular-bold">
+						Location:
+						</td>
+						<td>
+						{{user.location}}
+						</td>
+					</tr>
+
+					<tr>
+						<td class="regular-bold">
+						Email:
+						</td>
+						<td>
+						{{user.email}}
+						</td>
+					</tr>
+
+					<tr>
+						<td class="regular-bold">
+						Phone Number:
+						</td>
+						<td>
+						{{user.phone}}
+						</td>
+					</tr>
+
+					<tr>
+						<td class="regular-bold">
+						Address:
+						</td>
+						<td>
+						{{user.address}}
+						</td>
+					</tr>
+
+					<tr>
+						<td class="regular-bold">
+						Description:
+						</td>
+						<td>
+						{{user.description}}
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+	</div>
+	<div id="business-info-edit">
+		<div class="grid mt-10">
+			<div class="col-5-12 mobile-col-1-1">
+				<span class="medium-light">
+					Update Information
+				</span>
+				<span class="push-right mt-5">
+					<button class="link-btn" ng-click="showDisplayPage()">Done</button>
+				</span>
+				<update-info></update-info>
+			</div>
+		</div>
+	</div>
+</div>

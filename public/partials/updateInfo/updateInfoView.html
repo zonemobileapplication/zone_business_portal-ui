@@ -1,0 +1,52 @@
+<form name="updateInfoForm" ng-submit="submitUpdateInfoForm()">
+	<input type="text" name="business" placeholder="Business Name" class="big-input mt-10" ng-model="user.business" required />
+	<div class="invalid-text" ng-show="registerForm.business.$invalid && registerForm.business.$dirty">
+        <div ng-show="registerForm.business.$error.required">
+            A business name is required
+        </div>
+    </div>
+
+    <select name="location" ng-model="user.location" class="big-input mt-10" style="height:40px;" required>
+    	<option value="Isla Vista/Santa Barbara">Isla Vista/Santa Barbara</option>
+    	<option>Philadelphia</option>
+    	<option>New Orleans</option>
+    </select>
+    <div class="invalid-text" ng-show="registerForm.location.$invalid && registerForm.location.$dirty">
+        <div ng-show="registerForm.location.$error.required">
+            A location is required
+        </div>
+    </div>
+
+	<input type="email" name="email" placeholder="Email" class="big-input mt-10" ng-model="user.email" required />
+	<div class="invalid-text" ng-show="registerForm.email.$invalid && registerForm.email.$dirty">
+        <div ng-show="registerForm.email.$error.required">
+            Email is required
+        </div>
+        <div ng-show="registerForm.email.$error.email">
+            Email must include an @
+        </div>
+    </div>
+
+	<input type="text" name="phone" placeholder="Phone Number" class="big-input mt-10" ng-model="user.phone" required />
+	<div class="invalid-text" ng-show="registerForm.phone.$invalid && registerForm.phone.$dirty">
+        <div ng-show="registerForm.phone.$error.required">
+            A phone number is required
+        </div>
+    </div>
+
+	<input type="text" name="address" placeholder="Address" class="big-input mt-10" ng-model="user.address" required />
+	<div class="invalid-text" ng-show="registerForm.address.$invalid && registerForm.address.$dirty">
+        <div ng-show="registerForm.address.$error.required">
+            An address is required
+        </div>
+    </div>
+
+	<textarea name="description" placeholder="Business Description" rows="5" class="no-resize big-input mt-10" ng-model="user.description" required></textarea>
+	<div class="invalid-text" ng-show="registerForm.description.$invalid && registerForm.description.$dirty">
+        <div ng-show="registerForm.description.$error.required">
+            A description is required
+        </div>
+    </div>
+
+	<input type="submit" class="big-btn blue mt-10" value="Update" />
+</form>
