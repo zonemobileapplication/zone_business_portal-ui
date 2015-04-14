@@ -13,17 +13,17 @@
 				    	<option>2</option>
 				    	<option>3</option>
 				    </select>
-				</div><div class="span-10"><button class="link-btn"><i class="fa fa-lg fa-question-circle" ng-click="showRankInfo()"></i></button></div>
+				</div><div class="span-10"><button type="button" class="link-btn"><i class="fa fa-lg fa-question-circle" ng-click="showRankInfo()"></i></button></div>
 
 				<div class="span-90">
 				    <select name="type" class="big-input mt-10" style="height:40px;" ng-model="deal.type" ng-change="generateTypeInput()" required>
-				    	<option value="Deal Type" disabled selected>Deal Type</option>
-				    	<option value="1">x% discount off y</option>
-				    	<option value="2">free x with purchase of y</option>
-				    	<option value="3">buy one x, get one y z% off</option>
+				    	<option value="Deal Type" disabled selected>Preset Deals</option>
+				    	<option value="1">_% discount off _</option>
+				    	<option value="2">free _ with purchase of _</option>
+				    	<option value="3">buy one _, get one _ _% off</option>
 				    	<option value="4">custom deal</option>
 				    </select>
-				</div><div class="span-10"><button class="link-btn"><i class="fa fa-lg fa-question-circle" ng-click="showTypeInfo()"></i></button></div>
+				</div><div class="span-10"><button type="button" class="link-btn"><i class="fa fa-lg fa-question-circle" ng-click="showTypeInfo()"></i></button></div>
 
 			    <div ng-bind="dealTypeInput"></div>
 
@@ -39,10 +39,10 @@
 			    	Buy one <input class='small-input' ng-model='options.items[0]' /> get one <input class='small-input' ng-model='options.items[1]' /> <select style="height:40px;" ng-model='options.discount[0]'><option>Half Off</option><option>25% Off</option><option>Free</option></select>
 				</div>
 
-				<div class="span-row">
+				<div class="span-row" ng-show="deal.type == 4">
 					<div class="span-90">
 				    	<textarea name="description" placeholder="Description and additional value" rows="5" class="no-resize big-input mt-10" ng-model="deal.description"></textarea>
-					</div><div class="span-10" style="vertical-align:top;margin-top:5px;"><button class="link-btn"><i class="fa fa-lg fa-question-circle" ng-click="showDescriptionInfo()"></i></button></div>
+					</div><div class="span-10" style="vertical-align:top;margin-top:5px;"><button type="button" class="link-btn"><i class="fa fa-lg fa-question-circle" ng-click="showDescriptionInfo()"></i></button></div>
 				</div>
 
 			    <div class="mt-10">
@@ -53,6 +53,10 @@
 				</div>
 
 			</form>
+		</div>
+		<div class="col-5-12 hide-on-mobile">
+			<div class="push-right">
+			<img src="assets/img/iphone-info.png" height="500" width="auto" />
 		</div>
 	</div>
 </div>
