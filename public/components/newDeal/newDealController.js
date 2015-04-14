@@ -3,6 +3,7 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 	$scope.deal = {}
 	$scope.deal.rank = "Rank";
 	$scope.deal.type = "Deal Type";
+	$scope.deal.description = "";
 	$scope.options = {};
 	$scope.options.items = [];
 	$scope.options.discount = [];
@@ -78,6 +79,15 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 
 	$scope.showMoreInfo = function() {
 		swal({title: "Create a Deal", text: "You can upload a deal to the mobile application using the preset options or your own custom deal. To see how the deals will appear on the mobile application, please refer to the iPhone image on the right of the screen. The deal rank option allows you to rank your deals from most valuable (ie the deal that gives the largest discount) to least valuable. The Zone mobile app will then optimize the deal, so that it will get the greatest exposure and number of redemptions based on the “point” value that Zone assigns to the deal on the mobile app. For each deal, please indicate which school you would like the deals to be available for (if you have locations at multiple schools, please choose a school.)", confirmButtonText: "Got It" });
+	}
+	$scope.showRankInfo = function() {
+		swal({title: "Deal Rank", text: "The deal rank option allows you to rank your deals from most valuable (ie. the deal that gives the largest discount) to least valuable. The Zone mobile app will then optimize the deal, so that it will get the greatest exposure and number of redemptions based on the “point” value that Zone assigns to the deal on the mobile app. In general, a rank 1 deal will take approximately 8 classes to earn, a rank 2 deal will take approximately 5 classes to earn, and a rank 3 deal will take approximately 3 classes to earn.", confirmButtonText: "Got It" });
+	}
+	$scope.showTypeInfo = function() {
+		swal({title: "Deal Type", text: "The deal type allows you to quickly upload deals that are typical in order to easily to get your deals uploaded.", confirmButtonText: "Got It" });
+	}
+	$scope.showDescriptionInfo = function() {
+		swal({title: "Deal Description", text: "In this section, you can customize your deal additionally. For example, if you’d like to attract additional customers during certain hours, you could allow your deal to have additional value between certain hours.", confirmButtonText: "Got It" });
 	}
 	
 }]);
