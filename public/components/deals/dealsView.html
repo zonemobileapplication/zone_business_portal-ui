@@ -4,7 +4,7 @@
 	<div class="grid mt-10">
 		<div class="col-5-12 mobile-col-1-1">
 			<span class="medium-light">
-				Deals
+				Deals <button class="link-btn"><i class="fa fa-info-circle" ng-click="showMoreInfo()"></i></button>
 			</span>
 			<span class="push-right mt-5">
 				<a class="link-btn" href="/#/newdeal">Create a New Deal</a>
@@ -13,8 +13,11 @@
 			<table class="table business-info-table" ng-repeat="deal in deals">
 				<tr>
 					<td>
-						<span class="regular-bold">Rank:</span> {{deal.rank}} <span class="regular-bold">Cost:</span> {{deal.cost}} <span class="regular-bold">School:</span> {{deal.school}}
-						<div>
+						<span class="regular-bold">Rank:</span> {{deal.rank}} 
+						<div class="mt-5">
+							{{deal.type}}
+						</div>
+						<div class="mt-5">
 							{{deal.description}}
 						</div>
 						<img class="deal-image" src="{{deal.url}}" />

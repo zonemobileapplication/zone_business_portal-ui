@@ -24,5 +24,8 @@ angular.module('zonePortalApp.controllers').controller('BusinessInfoController',
 		$('#business-info-display').show();
 		$('#business-info-edit').hide();
 	}
+	$scope.showMoreInfo = function() {
+		swal({title: "Business Information", text: "Using this page, you can update your company’s information. The information that you enter will be displayed on the Zone mobile application, as you can see on the iPhone graphic on the right side of the screen.", confirmButtonText: "Got It" });
+	}
 	
 }]);

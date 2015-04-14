@@ -20,13 +20,13 @@ angular.module('zonePortalApp.controllers').controller('DealsController', ['$sco
 		    	}
 		    	
 		    	var deal = {
-		    		cost: results[i].get("cost"),
 		    		description: results[i].get("description"),
 		    		rank: results[i].get("rank"),
 		    		school: results[i].get("school"),
 		    		id: results[i].id,
 		    		url: image,
-		    		width: width
+		    		width: width,
+		    		type: results[i].get("type")
 		    	}
 		      $scope.deals.push(deal);    
 		    }
@@ -63,6 +63,10 @@ angular.module('zonePortalApp.controllers').controller('DealsController', ['$sco
 		  }
 		});
 		
+	}
+
+	$scope.showMoreInfo = function() {
+		swal({title: "Deals", text: "As you can see on the right side of the page in the iPhone image, the name of your restaurant, a photo that you provide when creating your deals, and your most enticing deal will be displayed in the list of deals on the “Deal Zone” of the mobile app. Once you have uploaded one deal, your business’s deals will go live on the mobile app.", confirmButtonText: "Got It" });
 	}
 
 	$scope.read();

@@ -2,7 +2,11 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 
 	$scope.deal = {}
 	$scope.deal.rank = "Rank";
-	$scope.deal.school = "School";
+	$scope.deal.type = "Deal Type";
+	$scope.options = {};
+	$scope.options.items = [];
+	$scope.options.discount = [];
+	$scope.options.discount[0] = "Half Off";
 
 	$scope.submitNewDeal = function(form) {
 		if($scope.deal.rank == "Rank" || $scope.deal.school == "School") 
@@ -13,6 +17,21 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 			var user = Parse.User.current();
 			var nDeal = Parse.Object.extend("Deals");
 			var newDeal = new nDeal();
+
+			var type = "";
+
+			if($scope.deal.type == 1)
+			{
+				type = $scope.options.discount[1] + "% off of " + $scope.options.items[0];
+			}
+			else if($scope.deal.type == 2)
+			{
+				type = "Free " + $scope.options.items[0] + " with purchase of " + $scope.options.items[1];
+			}
+			else if($scope.deal.type == 3)
+			{
+				type = "Buy one " + $scope.options.items[0] + " get one " + $scope.options.items[1] + " " + $scope.options.discount[0];
+			}
 
 			if($scope.deal.image) 
 			{
@@ -30,12 +49,11 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 			}
 			
 
-			newDeal.set("cost",$scope.deal.cost);
 			newDeal.set("vendor",user.id);
 			newDeal.set("description",$scope.deal.description);
 			newDeal.set("rank",$scope.deal.rank);
-			newDeal.set("school",$scope.deal.school);
 			newDeal.set("dealImage", parseFile);
+			newDeal.set("type", type);
 
 			newDeal.save(null, {
 			  success: function(newDeal) {
@@ -56,6 +74,10 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 		}
 		
 
+	}
+
+	$scope.showMoreInfo = function() {
+		swal({title: "Create a Deal", text: "You can upload a deal to the mobile application using the preset options or your own custom deal. To see how the deals will appear on the mobile application, please refer to the iPhone image on the right of the screen. The deal rank option allows you to rank your deals from most valuable (ie the deal that gives the largest discount) to least valuable. The Zone mobile app will then optimize the deal, so that it will get the greatest exposure and number of redemptions based on the “point” value that Zone assigns to the deal on the mobile app. For each deal, please indicate which school you would like the deals to be available for (if you have locations at multiple schools, please choose a school.)", confirmButtonText: "Got It" });
 	}
 	
 }]);

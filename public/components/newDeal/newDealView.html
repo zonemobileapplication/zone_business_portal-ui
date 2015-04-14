@@ -1,18 +1,11 @@
 <main-header></main-header>
 <div id="new-deal-page" ng-controller="NewDealController">
 	<div class="grid mt-10">
-		<div class="col-1-2 push-1-4">
-			<div class="medium-light" align="center">
-				Create a New Deal
+		<div class="col-1-3 mobile-col-1-1">
+			<div class="medium-light">
+				Create a New Deal <button class="link-btn"><i class="fa fa-info-circle" ng-click="showMoreInfo()"></i></button>
 			</div>
 			<form name="newDealForm" ng-submit="submitNewDeal(newDealForm)">
-				
-				<input type="text" name="cost" placeholder="Cost" class="big-input mt-10" ng-model="deal.cost" required />
-				<div class="invalid-text" ng-show="newDealForm.cost.$invalid && newDealForm.cost.$dirty">
-			        <div ng-show="newDealForm.cost.$error.required">
-			            A cost is required
-			        </div>
-			    </div>
 
 			    <select name="rank" ng-model="deal.rank" class="big-input mt-10" style="height:40px;" required>
 			    	<option value="Rank" disabled selected>Rank</option>
@@ -21,14 +14,29 @@
 			    	<option>3</option>
 			    </select>
 
-			    <select name="school" ng-model="deal.school" class="big-input mt-10" style="height:40px;" required>
-			    	<option value="School" disabled selected>School</option>
-			    	<option value="UCSB">UCSB</option>
-			    	<option>Tulane University</option>
-			    	<option>Wesleyan University</option>
+			    <select name="type" class="big-input mt-10" style="height:40px;" ng-model="deal.type" ng-change="generateTypeInput()" required>
+			    	<option value="Deal Type" disabled selected>Deal Type</option>
+			    	<option value="1">x% discount off y</option>
+			    	<option value="2">free x with purchase of y</option>
+			    	<option value="3">buy one x, get one y z% off</option>
+			    	<option value="4">custom deal</option>
 			    </select>
 
-			    <textarea name="description" placeholder="Deal Description" rows="5" class="no-resize big-input mt-10" ng-model="deal.description" required></textarea>
+			    <div ng-bind="dealTypeInput"></div>
+
+			    <div class="mt-10" ng-show="deal.type == 1">
+			    	<input class='small-input' ng-model='options.discount[1]' /> % off of <input class='small-input' ng-model='options.items[0]' /><br />
+				</div>
+
+				<div class="mt-10" ng-show="deal.type == 2">
+			    	Free <input class='small-input' ng-model='options.items[0]' /> with purchase of <input class='small-input' ng-model='options.items[1]' />
+				</div>
+
+				<div class="mt-10" ng-show="deal.type == 3">
+			    	Buy one <input class='small-input' ng-model='options.items[0]' /> get one <input class='small-input' ng-model='options.items[1]' /> <select style="height:40px;" ng-model='options.discount[0]'><option>Half Off</option><option>25% Off</option><option>Free</option></select>
+				</div>
+
+			    <textarea name="description" placeholder="Description and additional value" rows="5" class="no-resize big-input mt-10" ng-model="deal.description" required></textarea>
 				<div class="invalid-text" ng-show="newDealForm.description.$invalid && newDealForm.description.$dirty">
 			        <div ng-show="newDealForm.description.$error.required">
 			            A description is required
