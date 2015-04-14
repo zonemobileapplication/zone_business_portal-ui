@@ -11,6 +11,7 @@ angular.module('zonePortalApp.controllers').controller('BusinessInfoController',
 	$scope.user.description = Parse.User.current().get("description");
 
 	$scope.showUpdatePage = function() {
+		//alert("yo");
 		$('#business-info-display').hide();
 		$('#business-info-edit').show();
 	}
