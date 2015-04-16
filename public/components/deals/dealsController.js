@@ -5,7 +5,7 @@ angular.module('zonePortalApp.controllers').controller('DealsController', ['$sco
 
 	$scope.read = function() {
 		var q = new Parse.Query(DealClass);
-		q.equalTo("vendor",user.id);
+		q.equalTo("Vendor",user.id);
 		q.find({
 		  success: function(results){
 		    for(i in results){

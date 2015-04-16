@@ -50,7 +50,7 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 			}
 			
 
-			newDeal.set("vendor",user.id);
+			newDeal.set("Vendor",user.id);
 			newDeal.set("description",$scope.deal.description);
 			newDeal.set("rank",$scope.deal.rank);
 			newDeal.set("dealImage", parseFile);
@@ -88,6 +88,9 @@ angular.module('zonePortalApp.controllers').controller('NewDealController', ['$s
 	}
 	$scope.showDescriptionInfo = function() {
 		swal({title: "Deal Description", text: "In this section, you can customize your deal additionally. For example, if you’d like to attract additional customers during certain hours, you could allow your deal to have additional value between certain hours.", confirmButtonText: "Got It" });
+	}
+	$scope.showImageInfo = function() {
+		swal({title: "Upload a Photo", text: "Please upload an image for your deal ranked #1, and that image will appear on the mobile app as your business’s image.", confirmButtonText: "Got It" });
 	}
 	
 }]);
